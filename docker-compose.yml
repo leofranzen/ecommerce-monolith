@@ -1,0 +1,39 @@
+version: '3'
+
+volumes:
+  ecommerce-monolith-mariadb:
+    name: ecommerce-monolith-mariadb
+
+networks:
+  ecommerce-monolith:
+    name: ecommerce-monolith
+
+services:
+  mariadb:
+    container_name: ecommerce-monolith-mariadb
+    image: mariadb:10.6.5
+    ports:
+      - 3306
+    environment:
+      - MARIADB_DATABASE=ecommerce
+      - MARIADB_USER=ecommerceuser
+      - MARIADB_PASSWORD=ecommercepass
+      - MARIADB_RANDOM_ROOT_PASSWORD=yes
+    volumes:
+      - ecommerce-monolith-mariadb:/var/lib/mysql/
+    networks:
+      - ecommerce-monolith
+
+  ecommerce:
+    container_name: ecommerce-monolith
+    image: leofranzen/ecommerce-monolith:1.0
+    ports:
+      - 8080
+    environment:
+      - DB_HOST=ecommerce-monolith-mariadb
+      - DB_USER=ecommerceuser
+      - DB_PASSWORD=ecommercepass
+    networks:
+      - ecommerce-monolith
+    depends_on:
+      - mariadb
