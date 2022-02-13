@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-10-slim AS MAVEN_TOOL_CHAIN
+FROM maven:3.6-jdk-10-slim AS MAVEN_TOOL_CHAIN
 WORKDIR /tmp
 COPY pom.xml ./
 COPY src ./src
