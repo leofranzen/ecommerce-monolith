@@ -14,18 +14,18 @@ limitations under the License.
    <div class="py-5">
       <div class="container bg-light py-3 px-lg-5 py-lg-5">
          <#if cart?size==0>
-         <h3>Your shopping cart is empty!</h3>
-         <p>Items you add to your shopping cart will appear here.</p>
-         <a class="btn btn-primary" href="/" role="button">Browse Products &rarr; </a>
+         <h3>Seu carrinho está vazio!</h3>
+         <p>Os itens que você adicionar ao seu carrinho de compras aparecerão aqui.</p>
+         <a class="btn btn-primary" href="/" role="button">Procurar Produtos &rarr; </a>
          <#else>
          <div class="row mb-3 py-2">
             <div class="col">
-               <h3>${cart?size} item in your Shopping Cart</h3>
+               <h3>${cart?size} item no seu carrinho de compras</h3>
             </div>
             <div class="col text-right">
                <form method="POST" action="/cart/empty">
-                  <button class="btn btn-secondary" type="submit">Empty cart</button>
-                  <a class="btn btn-info" href="/" role="button">Browse more products &rarr; </a>
+                  <button class="btn btn-secondary" type="submit">Esvaziar carrinho</button>
+                  <a class="btn btn-info" href="/" role="button">Procurar mais produtos &rarr; </a>
                </form>
             </div>
          </div>
@@ -50,46 +50,46 @@ limitations under the License.
          <hr/>
          <div class="row py-3 my-2">
             <div class="col-12 col-lg-8 offset-lg-2">
-               <h3>Checkout</h3>
+               <h3>Conferir</h3>
                <form action="/cart/checkout" method="POST">
                   <div class="form-row">
                      <div class="col-md-5 mb-3">
-                        <label for="email">E-mail Address</label>
+                        <label for="email">Endereço E-mail</label>
                         <input type="email" class="form-control" id="email"
-                           name="email" value="someone@example.com" required>
+                           name="email" value="endereco@dominio.com" required>
                      </div>
                      <div class="col-md-5 mb-3">
-                        <label for="street_address">Street Address</label>
+                        <label for="street_address">Rua</label>
                         <input type="text" class="form-control"  name="street_address"
                            id="street_address" value="1600 Amphitheatre Parkway" required>
                      </div>
                      <div class="col-md-2 mb-3">
-                        <label for="zip_code">Zip Code</label>
+                        <label for="zip_code">CEP</label>
                         <input type="text" class="form-control"
                            name="zip_code" id="zip_code" value="94043" required pattern="\d{4,5}">
                      </div>
                   </div>
                   <div class="form-row">
                      <div class="col-md-5 mb-3">
-                        <label for="city">City</label>
+                        <label for="city">Cidade</label>
                         <input type="text" class="form-control" name="city" id="city"
-                           value="Mountain View" required>
+                           value="São Miguel do Oeste" required>
                      </div>
                      <div class="col-md-2 mb-3">
-                        <label for="state">State</label>
+                        <label for="state">Estado</label>
                         <input type="text" class="form-control" name="state" id="state"
-                           value="CA" required>
+                           value="SC" required>
                      </div>
                      <div class="col-md-5 mb-3">
-                        <label for="country">Country</label>
+                        <label for="country">País</label>
                         <input type="text" class="form-control" id="country"
                            placeholder="Country Name"
-                           name="country" value="United States" required>
+                           name="country" value="Brasil" required>
                      </div>
                   </div>
                   <div class="form-row">
                      <div class="col-md-6 mb-3">
-                        <label for="credit_card_number">Credit Card Number</label>
+                        <label for="credit_card_number">Cartão de Crédito</label>
                         <input type="text" class="form-control" id="credit_card_number"
                            name="credit_card_number"
                            placeholder="0000-0000-0000-0000"
@@ -97,32 +97,39 @@ limitations under the License.
                            required pattern="\d{4}-\d{4}-\d{4}-\d{4}">
                      </div>
                      <div class="col-md-2 mb-3">
-                        <label for="credit_card_expiration_month">Month</label>
+                        <label for="credit_card_expiration_month">Mês</label>
                         <select name="credit_card_expiration_month" id="credit_card_expiration_month"
                            class="form-control">
-                           <option value="1">January</option>
-                           <option value="2">February</option>
-                           <option value="3">March</option>
-                           <option value="4">April</option>
-                           <option value="5">May</option>
-                           <option value="6">June</option>
-                           <option value="7">July</option>
-                           <option value="8">August</option>
-                           <option value="9">September</option>
-                           <option value="10">October</option>
-                           <option value="11">November</option>
-                           <option value="12">December</option>
+                           <option value="1">Janeiro</option>
+                           <option value="2">Fevereiro</option>
+                           <option value="3">Março</option>
+                           <option value="4">Abril</option>
+                           <option value="5">Maio</option>
+                           <option value="6">Junho</option>
+                           <option value="7">Julho</option>
+                           <option value="8">Agosto</option>
+                           <option value="9">Setembro</option>
+                           <option value="10">Outubro</option>
+                           <option value="11">Novembro</option>
+                           <option value="12">Dezembro</option>
                         </select>
                      </div>
                      <div class="col-md-2 mb-3">
-                        <label for="credit_card_expiration_year">Year</label>
+                        <label for="credit_card_expiration_year">Ano</label>
                         <select name="credit_card_expiration_year" id="credit_card_expiration_year"
                            class="form-control">
-                        {{ range $i, $y := $.expiration_years}}<option value="{{$y}}"
-                        {{if eq $i 1 -}}
-                        selected="selected"
-                        {{- end}}
-                        >{{$y}}</option>{{end}}
+                           <option value="1">2018</option>
+                           <option value="2">2019</option>
+                           <option value="3">2020</option>
+                           <option value="4">2021</option>
+                           <option value="5">2022</option>
+                           <option value="6">2023</option>
+                           <option value="7">2024</option>
+                           <option value="8">2025</option>
+                           <option value="9">2026</option>
+                           <option value="10">2027</option>
+                           <option value="11">2028</option>
+                           <option value="12">2029</option>
                         </select>
                      </div>
                      <div class="col-md-2 mb-3">
@@ -133,7 +140,7 @@ limitations under the License.
                      </div>
                   </div>
                   <div class="form-row">
-                     <button class="btn btn-primary" type="submit">Place your order &rarr;</button>
+                     <button class="btn btn-primary" type="submit">Fazer o pedido &rarr;</button>
                   </div>
                </form>
             </div>

@@ -12,7 +12,7 @@ limitations under the License.
 <div class="row">
    <div class="container">
       <div class="alert alert-dark" role="alert">
-         <strong>Advertisement:</strong>
+         <strong>Propaganda:</strong>
          <a href="${ad.redirectUrl}" rel="nofollow" target="_blank" class="alert-link"> ${ad.text} </a>
       </div>
    </div>

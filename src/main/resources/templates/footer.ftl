@@ -12,12 +12,12 @@ limitations under the License.
 <footer class="py-5 px-5">
    <div class="container">
       <p>
-         &copy; 2020 Google Inc
+         &copy; 2022 Código baseado em projeto da <a href="https://github.com/GoogleCloudPlatform/monolith-to-microservices-example">GCP</a>
       </p>
       <p>
          <small class="text-muted">
-         This website is hosted for demo purposes only. It is not an
-         actual shop. This is not an official Google project.
+         Este site é hospedado apenas para fins de estudo.
+         Não é uma loja real. Este não é um projeto oficial.
          </small>
       </p>
       <small class="text-muted">

@@ -9,7 +9,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<h5 class="text-muted">Products you might like</h5>
+<h5 class="text-muted">Produtos que você pode gostar</h5>
 <div class="row my-2 py-3">
    <#list recommend as rec>
    <div class="col-sm-6 col-md-4 col-lg-3">

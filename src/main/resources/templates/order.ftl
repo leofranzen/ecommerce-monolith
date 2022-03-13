@@ -16,12 +16,12 @@ limitations under the License.
          <div class="row mt-5 py-2">
             <div class="col">
                <h3>
-                  Your order is complete!
+                  Sua ordem está completa!
                </h3>
                <p>
-                  Order Confirmation ID: <strong>${orderId}</strong>
+                  Identificação de ordem: <strong>${orderId}</strong>
                </p>
-               <a class="btn btn-primary" href="/" role="button">Browse other products &rarr; </a>
+               <a class="btn btn-primary" href="/" role="button">Procurar outros produtos &rarr; </a>
             </div>
          </div>
          <hr/>
