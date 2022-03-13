@@ -18,13 +18,13 @@ limitations under the License.
    >
    <div class="container">
       <h1 class="jumbotron-heading">
-         One-stop for Fashion &amp; Style Online
+         Parada única para Moda &amp; Estilo
       </h1>
       <p class="lead text-muted">
-         Tired of mainstream fashion ideas, popular trends and
-         societal norms? This line of lifestyle products will help
-         you catch up with the trend and express your
-         personal style. Start shopping hip and vintage items now!
+         Cansado das principais ideias de moda, tendências populares e
+         normas sociais? Esta linha de produtos de estilo de vida ajudará
+         você a acompanhar a tendência e a expressar seu próprio estilo.
+         Comece a comprar itens modernos agora!
       </p>
    </div>
    </section>
@@ -46,7 +46,7 @@ limitations under the License.
                      <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                            <a href="product/${prod.id}">
-                           <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                           <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
                            </a>
                         </div>
                         <small class="text-muted">

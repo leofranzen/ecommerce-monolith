@@ -44,37 +44,37 @@ public class AdsService {
     Ad camera =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/2ZYFJ3GM2N")
-            .setText("Film camera for sale. 50% off.")
+            .setText("Câmera de filme com 50% de desconto.")
             .build();
     Ad lens =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/66VCHSJNUP")
-            .setText("Vintage camera lens for sale. 20% off.")
+            .setText("Vendo lente de câmera antiga. 20% de desconto.")
             .build();
     Ad recordPlayer =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/0PUK6V6EV0")
-            .setText("Vintage record player for sale. 30% off.")
+            .setText("Vendo toca discos antigos. 30% de desconto.")
             .build();
     Ad bike =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/9SIQT8TOJO")
-            .setText("City Bike for sale. 10% off.")
+            .setText("Vendo bicicleta urbana. 10% de desconto.")
             .build();
     Ad baristaKit =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/1YMWWN1N4O")
-            .setText("Home Barista kitchen kit for sale. Buy one, get second kit for free.")
+            .setText("Vende-se kit Barista. Compre um e ganhe o segundo kit de graça.")
             .build();
     Ad airPlant =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/6E92ZMYYFZ")
-            .setText("Air plants for sale. Buy two, get third one for free.")
+            .setText("Vendo plantas aéreas. Compre dois, leve o terceiro de graça.")
             .build();
     Ad terrarium =
         new Ad.AdBuilder()
             .setRedirectUrl("/product/L9ECAV7KIM")
-            .setText("Terrarium for sale. Buy one, get second one for free.")
+            .setText("Vende-se terrário. Compre um e ganhe o segundo de graça.")
             .build();
 
     return ImmutableListMultimap.<String, Ad>builder()

@@ -25,7 +25,7 @@ limitations under the License.
                </p>
                <hr/>
                <p>
-               <h6>Product Description:</h6>
+               <h6>Descrição do Produto:</h6>
                ${prod.description}
                </p>
                <hr/>
@@ -33,7 +33,7 @@ limitations under the License.
                   <input type="hidden" name="product_id" value="${prod.id}"/>
                   <div class="input-group">
                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="quantity">Quantity</label>
+                        <label class="input-group-text" for="quantity">Quantidade</label>
                      </div>
                      <select name="quantity" id="quantity" class="custom-select form-control form-control-lg">
                         <option>1</option>
@@ -43,7 +43,7 @@ limitations under the License.
                         <option>5</option>
                         <option>10</option>
                      </select>
-                     <button type="submit" class="btn btn-info btn-lg ml-3">Add to Cart</button>
+                     <button type="submit" class="btn btn-info btn-lg ml-3">Adicionar ao Carrinho</button>
                   </div>
                </form>
             </div>
