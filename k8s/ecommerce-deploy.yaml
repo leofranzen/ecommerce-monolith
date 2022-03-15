@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce
+  namespace: ecommerce-monolith
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: ecommerce
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+    spec:
+      containers:
+      - name: ecommerce
+        imagePullPolicy: Always
+        image: leofranzen/ecommerce-monolith:4.0
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          value: "ecommerce-mariadb"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: ecommerce
+              key: MARIADB_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ecommerce
+              key: MARIADB_PASSWORD
+        readinessProbe:
+          initialDelaySeconds: 60
+          httpGet:
+            path: /
+            port: 8080
+        livenessProbe:
+          initialDelaySeconds: 60
+          httpGet:
+            path: /
+            port: 8080

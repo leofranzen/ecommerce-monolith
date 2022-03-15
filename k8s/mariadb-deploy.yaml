@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-mariadb
+  namespace: ecommerce-monolith
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecommerce-mariadb
+  template:
+    metadata:
+      labels:
+        app: ecommerce-mariadb
+    spec:
+      containers:
+      - name: ecommerce-mariadb
+        imagePullPolicy: Always
+        image: mariadb:10.6.5
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MARIADB_DATABASE
+          value: "ecommerce"
+        - name: MARIADB_USER
+          valueFrom:
+            secretKeyRef:
+              name: ecommerce
+              key: MARIADB_USER
+        - name: MARIADB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ecommerce
+              key: MARIADB_PASSWORD
+        - name: MARIADB_RANDOM_ROOT_PASSWORD
+          value: "yes"
